@@ -205,7 +205,7 @@ namespace WinFormsApp1
             try
             {
                 textBox1.Clear();
-                textBox2.Text = (subTotal / 2).ToString();
+                textBox2.Text = (subTotal / 2).ToString("C");
                 textBox3.Clear();
                 textBox4.Clear();
             }
@@ -221,7 +221,7 @@ namespace WinFormsApp1
             {
                 textBox1.Clear();
                 textBox2.Clear();
-                textBox3.Text = (subTotal / 3).ToString();
+                textBox3.Text = (subTotal / 3).ToString("C");
                 textBox4.Clear();
             }
             catch (Exception)
@@ -237,7 +237,7 @@ namespace WinFormsApp1
                 textBox1.Clear();
                 textBox2.Clear();
                 textBox3.Clear();
-                textBox4.Text = (subTotal / 4).ToString();
+                textBox4.Text = (subTotal / 4).ToString("C");
             }
             catch (Exception)
             {
@@ -261,6 +261,7 @@ namespace WinFormsApp1
                 radioButton2.Enabled = false;
                 radioButton3.Enabled = false;
                 radioButton4.Enabled = false;
+                buttonCalcular.Enabled = true;
             }
             catch (Exception)
             {
@@ -346,6 +347,7 @@ namespace WinFormsApp1
                 radioButton2.Enabled = false;
                 radioButton3.Enabled = false;
                 radioButton4.Enabled = false;
+                radioButtonPopular.Enabled = false;
             }
             catch (Exception)
             {
