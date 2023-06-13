@@ -29,3 +29,4 @@ C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicio
 C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Projeto final\WinFormsApp1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Projeto final\WinFormsApp1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Projeto final\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.csproj.CopyComplete
+C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Projeto final\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.LoginMenu.resources

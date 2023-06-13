@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1
 {
@@ -23,6 +24,7 @@ namespace WinFormsApp1
             //valor do elemento uf
             comboBoxEstado.ValueMember = "codigo";
             AtualizaGrid();
+            textBoxCodigo.Visible = false;
         }
 
 
@@ -73,7 +75,7 @@ namespace WinFormsApp1
             //carregue o dataGride do cliente
             dataGridViewCliente.DataSource = ListarCliente();
             //Montando o DataGrid com o cabeçalho e largura das colunas = tabela
-            dataGridViewCliente.Columns[0].HeaderText = "Cod";
+            dataGridViewCliente.Columns[0].HeaderText = "Cód";
             dataGridViewCliente.Columns[1].HeaderText = "Nome";
             dataGridViewCliente.Columns[2].HeaderText = "CPF";
             dataGridViewCliente.Columns[3].HeaderText = "CEP";
@@ -110,7 +112,7 @@ namespace WinFormsApp1
                 SqlConnection con = new SqlConnection(dados.StringConexao);
                 con.Open();
                 //olhar como foi criado a tabela cliente
-                string sql = "Select * From Cliente"; //traz os dados da tabela cliente
+                string sql = "Select codigo, nome, cpf, cep, rua, numero_casa, cidade, uf, telefone, dt_nascimento  From Cliente"; //traz os dados da tabela cliente
                 SqlDataAdapter da = new SqlDataAdapter(sql, con);
                 DataTable dt = new DataTable(); //instanciamento a classe dataTable 
                                                 // carregamos as inf's do bco em tabela 
@@ -363,6 +365,7 @@ namespace WinFormsApp1
                         //vai iniciar capturando os dados alterados nos campos da tela e alterar no banco de dados
                         int linha = dataGridViewCliente.SelectedRows[0].Index;
                         Cliente cli = new Cliente();
+                        //cli.Codigo = Convert.ToInt32(textBoxCodigo.Text);
                         cli.Nome = textBoxNome.Text;
                         cli.Cpf = TextBoxCpf.Text;
                         cli.Telefone = TextBoxTelefone.Text;
@@ -390,11 +393,12 @@ namespace WinFormsApp1
                         cmd.Parameters.Add("@dtnascimnto", SqlDbType.Date).Value = cli.DataNasc;
                         cmd.Parameters.Add("@senha", SqlDbType.VarChar).Value = cli.Senha;
                         MessageBox.Show("Cliente alterado com sucesso!", "Sistema\n", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        con.Close();
                         Limpar();
                         textBoxSenha.Text = string.Empty;
-                        AtualizaGrid();
+                        
+                        cmd.ExecuteNonQuery();
                         con.Close();
+                        AtualizaGrid();
                     }
                 }
             }

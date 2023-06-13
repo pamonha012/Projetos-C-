@@ -8,6 +8,12 @@ namespace WinFormsApp1
 {
     public class Marca
     {
+        private int codigo;
+        public int Codigo
+        {
+            get { return codigo; }
+            set { codigo = value; }
+        }
 
         private string nome;
         public string Nome
@@ -17,7 +23,7 @@ namespace WinFormsApp1
         }
 
         private string descricao;
-        public string Descricap
+        public string Descricao
         {
             get { return descricao; }
             set { descricao = value; }

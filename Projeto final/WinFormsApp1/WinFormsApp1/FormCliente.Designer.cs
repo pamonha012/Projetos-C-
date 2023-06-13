@@ -59,6 +59,7 @@
             this.buttonVoltar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxSenha = new System.Windows.Forms.TextBox();
+            this.textBoxCodigo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -243,7 +244,7 @@
             // dataGridViewCliente
             // 
             this.dataGridViewCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCliente.Location = new System.Drawing.Point(18, 297);
+            this.dataGridViewCliente.Location = new System.Drawing.Point(18, 366);
             this.dataGridViewCliente.Name = "dataGridViewCliente";
             this.dataGridViewCliente.RowTemplate.Height = 25;
             this.dataGridViewCliente.Size = new System.Drawing.Size(776, 213);
@@ -255,9 +256,9 @@
             // 
             this.buttonAlterar.BackColor = System.Drawing.Color.Teal;
             this.buttonAlterar.ForeColor = System.Drawing.Color.White;
-            this.buttonAlterar.Location = new System.Drawing.Point(558, 525);
+            this.buttonAlterar.Location = new System.Drawing.Point(551, 327);
             this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(114, 45);
+            this.buttonAlterar.Size = new System.Drawing.Size(114, 33);
             this.buttonAlterar.TabIndex = 48;
             this.buttonAlterar.Text = "Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = false;
@@ -267,9 +268,9 @@
             // 
             this.buttonLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonLimpar.ForeColor = System.Drawing.Color.White;
-            this.buttonLimpar.Location = new System.Drawing.Point(688, 525);
+            this.buttonLimpar.Location = new System.Drawing.Point(681, 327);
             this.buttonLimpar.Name = "buttonLimpar";
-            this.buttonLimpar.Size = new System.Drawing.Size(114, 45);
+            this.buttonLimpar.Size = new System.Drawing.Size(114, 33);
             this.buttonLimpar.TabIndex = 47;
             this.buttonLimpar.Text = "Limpar";
             this.buttonLimpar.UseVisualStyleBackColor = false;
@@ -279,9 +280,9 @@
             // 
             this.buttonCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.buttonCadastrar.ForeColor = System.Drawing.Color.White;
-            this.buttonCadastrar.Location = new System.Drawing.Point(429, 525);
+            this.buttonCadastrar.Location = new System.Drawing.Point(422, 327);
             this.buttonCadastrar.Name = "buttonCadastrar";
-            this.buttonCadastrar.Size = new System.Drawing.Size(114, 45);
+            this.buttonCadastrar.Size = new System.Drawing.Size(114, 33);
             this.buttonCadastrar.TabIndex = 46;
             this.buttonCadastrar.Text = "Cadastrar";
             this.buttonCadastrar.UseVisualStyleBackColor = false;
@@ -290,7 +291,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(18, 521);
+            this.label12.Location = new System.Drawing.Point(18, 299);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(341, 25);
             this.label12.TabIndex = 50;
@@ -299,7 +300,7 @@
             // 
             // textBoxPesquisa
             // 
-            this.textBoxPesquisa.Location = new System.Drawing.Point(18, 549);
+            this.textBoxPesquisa.Location = new System.Drawing.Point(18, 327);
             this.textBoxPesquisa.Name = "textBoxPesquisa";
             this.textBoxPesquisa.Size = new System.Drawing.Size(388, 33);
             this.textBoxPesquisa.TabIndex = 49;
@@ -309,7 +310,7 @@
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(701, 585);
+            this.pictureBox1.Location = new System.Drawing.Point(701, 590);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -355,11 +356,19 @@
             this.textBoxSenha.Size = new System.Drawing.Size(180, 33);
             this.textBoxSenha.TabIndex = 54;
             // 
+            // textBoxCodigo
+            // 
+            this.textBoxCodigo.Location = new System.Drawing.Point(766, 12);
+            this.textBoxCodigo.Name = "textBoxCodigo";
+            this.textBoxCodigo.Size = new System.Drawing.Size(35, 33);
+            this.textBoxCodigo.TabIndex = 88;
+            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 647);
+            this.Controls.Add(this.textBoxCodigo);
             this.Controls.Add(this.textBoxSenha);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label13);
@@ -436,5 +445,6 @@
         private Button buttonVoltar;
         private Label label3;
         private TextBox textBoxSenha;
+        private TextBox textBoxCodigo;
     }
 }

@@ -49,8 +49,13 @@
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxEssencia = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxPesquisa = new System.Windows.Forms.TextBox();
+            this.dataGridViewProduto = new System.Windows.Forms.DataGridView();
+            this.textBoxCodigo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxFornecedor
@@ -201,42 +206,45 @@
             this.buttonAlterar.BackColor = System.Drawing.Color.Teal;
             this.buttonAlterar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAlterar.ForeColor = System.Drawing.Color.White;
-            this.buttonAlterar.Location = new System.Drawing.Point(628, 298);
+            this.buttonAlterar.Location = new System.Drawing.Point(598, 382);
             this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(85, 33);
+            this.buttonAlterar.Size = new System.Drawing.Size(95, 33);
             this.buttonAlterar.TabIndex = 74;
             this.buttonAlterar.Text = "Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = false;
+            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
             // buttonLimpar
             // 
             this.buttonLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonLimpar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonLimpar.ForeColor = System.Drawing.Color.White;
-            this.buttonLimpar.Location = new System.Drawing.Point(719, 298);
+            this.buttonLimpar.Location = new System.Drawing.Point(708, 382);
             this.buttonLimpar.Name = "buttonLimpar";
-            this.buttonLimpar.Size = new System.Drawing.Size(85, 33);
+            this.buttonLimpar.Size = new System.Drawing.Size(95, 33);
             this.buttonLimpar.TabIndex = 73;
             this.buttonLimpar.Text = "Limpar";
             this.buttonLimpar.UseVisualStyleBackColor = false;
+            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
             // 
             // buttonCadastrar
             // 
             this.buttonCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.buttonCadastrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonCadastrar.ForeColor = System.Drawing.Color.White;
-            this.buttonCadastrar.Location = new System.Drawing.Point(537, 298);
+            this.buttonCadastrar.Location = new System.Drawing.Point(486, 382);
             this.buttonCadastrar.Name = "buttonCadastrar";
-            this.buttonCadastrar.Size = new System.Drawing.Size(85, 33);
+            this.buttonCadastrar.Size = new System.Drawing.Size(95, 33);
             this.buttonCadastrar.TabIndex = 72;
             this.buttonCadastrar.Text = "Cadastrar";
             this.buttonCadastrar.UseVisualStyleBackColor = false;
+            this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("BankGothic Lt BT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(482, 76);
+            this.label13.Location = new System.Drawing.Point(467, 357);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(338, 12);
             this.label13.TabIndex = 90;
@@ -246,7 +254,7 @@
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(718, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(703, 300);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -262,19 +270,60 @@
             this.label8.TabIndex = 91;
             this.label8.Text = "Essência:";
             // 
-            // textBox1
+            // textBoxEssencia
             // 
-            this.textBox1.Location = new System.Drawing.Point(575, 122);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 33);
-            this.textBox1.TabIndex = 92;
+            this.textBoxEssencia.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxEssencia.Location = new System.Drawing.Point(575, 118);
+            this.textBoxEssencia.Name = "textBoxEssencia";
+            this.textBoxEssencia.Size = new System.Drawing.Size(228, 35);
+            this.textBoxEssencia.TabIndex = 92;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(20, 354);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(353, 25);
+            this.label12.TabIndex = 95;
+            this.label12.Text = "Insira o nome do produto para pesquisa:";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // textBoxPesquisa
+            // 
+            this.textBoxPesquisa.Location = new System.Drawing.Point(20, 382);
+            this.textBoxPesquisa.Name = "textBoxPesquisa";
+            this.textBoxPesquisa.Size = new System.Drawing.Size(388, 33);
+            this.textBoxPesquisa.TabIndex = 94;
+            this.textBoxPesquisa.TextChanged += new System.EventHandler(this.textBoxPesquisa_TextChanged);
+            // 
+            // dataGridViewProduto
+            // 
+            this.dataGridViewProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProduto.Location = new System.Drawing.Point(20, 427);
+            this.dataGridViewProduto.Name = "dataGridViewProduto";
+            this.dataGridViewProduto.RowTemplate.Height = 25;
+            this.dataGridViewProduto.Size = new System.Drawing.Size(784, 213);
+            this.dataGridViewProduto.TabIndex = 93;
+            this.dataGridViewProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCliente_CellContentClick);
+            this.dataGridViewProduto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewProduto_MouseClick);
+            // 
+            // textBoxCodigo
+            // 
+            this.textBoxCodigo.Location = new System.Drawing.Point(782, 12);
+            this.textBoxCodigo.Name = "textBoxCodigo";
+            this.textBoxCodigo.Size = new System.Drawing.Size(35, 33);
+            this.textBoxCodigo.TabIndex = 96;
             // 
             // FormProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 362);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(829, 652);
+            this.Controls.Add(this.textBoxCodigo);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBoxPesquisa);
+            this.Controls.Add(this.dataGridViewProduto);
+            this.Controls.Add(this.textBoxEssencia);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.pictureBox1);
@@ -303,6 +352,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de clientes";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,6 +380,10 @@
         private Label label13;
         private PictureBox pictureBox1;
         private Label label8;
-        private TextBox textBox1;
+        private TextBox textBoxEssencia;
+        private Label label12;
+        private TextBox textBoxPesquisa;
+        private DataGridView dataGridViewProduto;
+        private TextBox textBoxCodigo;
     }
 }

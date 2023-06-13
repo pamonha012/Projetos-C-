@@ -17,6 +17,9 @@ namespace WinFormsApp1
         {
             InitializeComponent();
             CarregarCliente();
+            comboBoxEscolha.SelectedIndex = 0;
+            TextBoxCnpj.Enabled = false;
+            TextBoxCpf.Enabled = false;
         }
 
         private void FormLogin_KeyDown(object sender, KeyEventArgs e)
@@ -60,7 +63,7 @@ namespace WinFormsApp1
         }
 
 
-        private bool AutenticarUsuario(string cpf, string senha)
+        private bool AutenticarCliente(string cpf, string senha)
         {
             using (SqlConnection connection = new SqlConnection(dados.StringConexao))
             {
@@ -86,6 +89,32 @@ namespace WinFormsApp1
             }
         }
 
+        private bool AutenticarFornecedor(string cnpj, string senha)
+        {
+            using (SqlConnection connection = new SqlConnection(dados.StringConexao))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Consultar o banco de dados para verificar se as credenciais são válidas
+                    string query = "SELECT COUNT(codigo) FROM Fornecedores WHERE cnpj = @cnpj AND senha = @senha";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@cnpj", cnpj);
+                    command.Parameters.AddWithValue("@senha", senha);
+
+                    int count = (int)command.ExecuteScalar();
+
+                    return count > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message);
+                    return false;
+                }
+            }
+        }
+
         private void buttonLogar_Click(object sender, EventArgs e)
         {
 
@@ -94,19 +123,39 @@ namespace WinFormsApp1
 
                 string cpf = TextBoxCpf.Text;
                 string senha = textBoxSenha.Text;
+                string cnpj = TextBoxCnpj.Text;
 
-                if (AutenticarUsuario(cpf, senha))
+                if (comboBoxEscolha.Text == "Fornecedor")
                 {
-                    MessageBox.Show("Bem vindo!");
-                    this.Hide();
-                    var form = new Form1();
-                    form.Show();
+                    if (AutenticarFornecedor(cnpj, senha))
+                    {
+                        MessageBox.Show("Bem vindo!");
+                        this.Hide();
+                        var form = new Form1();
+                        form.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("CNPJ ou senha inválidos!");
+                        TextBoxCpf.Text = string.Empty;
+                        textBoxSenha.Text = string.Empty;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("CPF ou senha inválidos!");
-                    TextBoxCpf.Text = string.Empty;
-                    textBoxSenha.Text = string.Empty;
+                    if (AutenticarCliente(cpf, senha))
+                    {
+                        MessageBox.Show("Bem vindo!");
+                        this.Hide();
+                        var form = new Form1();
+                        form.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("CPF ou senha inválidos!");
+                        TextBoxCpf.Text = string.Empty;
+                        textBoxSenha.Text = string.Empty;
+                    }
                 }
             }
             catch (SqlException erro)
@@ -126,8 +175,26 @@ namespace WinFormsApp1
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var form = new FormCliente();
+            var form = new LoginMenu();
             form.Show();
+        }
+
+        private void comboBoxEscolha_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxEscolha.Text == "Fornecedor")
+            {
+                TextBoxCpf.Enabled = false;
+                TextBoxCnpj.Enabled = true;
+            }
+            else if (comboBoxEscolha.Text == "Cliente"){
+                TextBoxCpf.Enabled = true;
+                TextBoxCnpj.Enabled = false;
+            }
+            else
+            {
+                TextBoxCnpj.Enabled = false;
+                TextBoxCpf.Enabled = false;
+            }
         }
     }
 }

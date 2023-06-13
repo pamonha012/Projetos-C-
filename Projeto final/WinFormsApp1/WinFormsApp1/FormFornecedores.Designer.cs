@@ -46,6 +46,9 @@
             this.dataGridViewFornecedores = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxPesquisa = new System.Windows.Forms.TextBox();
+            this.textBoxSenha = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxCodigo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFornecedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +63,7 @@
             // 
             // TextBoxCnpj
             // 
-            this.TextBoxCnpj.Location = new System.Drawing.Point(331, 228);
+            this.TextBoxCnpj.Location = new System.Drawing.Point(326, 228);
             this.TextBoxCnpj.Mask = "00,000,000/0000-00";
             this.TextBoxCnpj.Name = "TextBoxCnpj";
             this.TextBoxCnpj.Size = new System.Drawing.Size(177, 33);
@@ -80,7 +83,7 @@
             this.textBoxNome.Location = new System.Drawing.Point(117, 115);
             this.textBoxNome.MaxLength = 50;
             this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(661, 33);
+            this.textBoxNome.Size = new System.Drawing.Size(401, 33);
             this.textBoxNome.TabIndex = 56;
             // 
             // label6
@@ -151,19 +154,20 @@
             this.buttonAlterar.BackColor = System.Drawing.Color.Teal;
             this.buttonAlterar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAlterar.ForeColor = System.Drawing.Color.White;
-            this.buttonAlterar.Location = new System.Drawing.Point(608, 228);
+            this.buttonAlterar.Location = new System.Drawing.Point(605, 228);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(85, 33);
             this.buttonAlterar.TabIndex = 69;
             this.buttonAlterar.Text = "Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = false;
+            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
             // buttonLimpar
             // 
             this.buttonLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonLimpar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonLimpar.ForeColor = System.Drawing.Color.White;
-            this.buttonLimpar.Location = new System.Drawing.Point(699, 228);
+            this.buttonLimpar.Location = new System.Drawing.Point(696, 228);
             this.buttonLimpar.Name = "buttonLimpar";
             this.buttonLimpar.Size = new System.Drawing.Size(85, 33);
             this.buttonLimpar.TabIndex = 68;
@@ -176,7 +180,7 @@
             this.buttonCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.buttonCadastrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonCadastrar.ForeColor = System.Drawing.Color.White;
-            this.buttonCadastrar.Location = new System.Drawing.Point(517, 228);
+            this.buttonCadastrar.Location = new System.Drawing.Point(514, 228);
             this.buttonCadastrar.Name = "buttonCadastrar";
             this.buttonCadastrar.Size = new System.Drawing.Size(85, 33);
             this.buttonCadastrar.TabIndex = 67;
@@ -209,6 +213,7 @@
             this.dataGridViewFornecedores.RowTemplate.Height = 25;
             this.dataGridViewFornecedores.Size = new System.Drawing.Size(776, 213);
             this.dataGridViewFornecedores.TabIndex = 72;
+            this.dataGridViewFornecedores.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewFornecedores_MouseClick);
             // 
             // label12
             // 
@@ -225,12 +230,40 @@
             this.textBoxPesquisa.Name = "textBoxPesquisa";
             this.textBoxPesquisa.Size = new System.Drawing.Size(388, 33);
             this.textBoxPesquisa.TabIndex = 75;
+            this.textBoxPesquisa.TextChanged += new System.EventHandler(this.textBoxPesquisa_TextChanged);
+            // 
+            // textBoxSenha
+            // 
+            this.textBoxSenha.Location = new System.Drawing.Point(598, 118);
+            this.textBoxSenha.Name = "textBoxSenha";
+            this.textBoxSenha.PasswordChar = '*';
+            this.textBoxSenha.Size = new System.Drawing.Size(180, 33);
+            this.textBoxSenha.TabIndex = 78;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(524, 121);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 25);
+            this.label4.TabIndex = 77;
+            this.label4.Text = "Senha:";
+            // 
+            // textBoxCodigo
+            // 
+            this.textBoxCodigo.Location = new System.Drawing.Point(774, 12);
+            this.textBoxCodigo.Name = "textBoxCodigo";
+            this.textBoxCodigo.Size = new System.Drawing.Size(35, 33);
+            this.textBoxCodigo.TabIndex = 88;
             // 
             // FormFornecedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 597);
+            this.Controls.Add(this.textBoxCodigo);
+            this.Controls.Add(this.textBoxSenha);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBoxPesquisa);
             this.Controls.Add(this.dataGridViewFornecedores);
@@ -281,5 +314,8 @@
         private DataGridView dataGridViewFornecedores;
         private Label label12;
         private TextBox textBoxPesquisa;
+        private TextBox textBoxSenha;
+        private Label label4;
+        private TextBox textBoxCodigo;
     }
 }
