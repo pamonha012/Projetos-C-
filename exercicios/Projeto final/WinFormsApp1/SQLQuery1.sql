@@ -1,0 +1,1 @@
+﻿SELECT senha FROM Cliente WHERE codigo=codigo;

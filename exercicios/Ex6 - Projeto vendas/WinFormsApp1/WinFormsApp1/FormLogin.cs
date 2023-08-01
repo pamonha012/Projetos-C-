@@ -18,9 +18,19 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
+        private void FormLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(this.ActiveControl, !e.Shift, true, true, true);
+            }
+        }
+
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            var form = new FormCliente();
+            form.Show();
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
@@ -32,31 +42,39 @@ namespace WinFormsApp1
         {
             textBoxLogin.Clear();
             textBoxSenha.Clear();
-            labelStatus.Text = string.Empty;
         }
 
-        private void buttonLogar_Click(object sender, EventArgs e)
+            private void buttonLogar_Click(object sender, EventArgs e)
         {
-            if (textBoxLogin.Text == string.Empty || textBoxSenha.Text == String.Empty)
+            try
             {
-                labelStatus.Text = "Preencha os campos";
-                labelStatus.ForeColor = Color.Blue;
+                if (textBoxLogin.Text == string.Empty || textBoxSenha.Text == String.Empty)
+                {
+                    MessageBox.Show("PREENCHA TODOS OS CAMPOS", "ATENÇÃO\n", MessageBoxButtons.OK);
+                }
+                else if (textBoxLogin.Text.ToLower() == "admin" && textBoxSenha.Text == "12345")
+                {
+                    //SOCORRO
+                    MessageBox.Show("Acesso OK", "Seja bem vindo!\n", MessageBoxButtons.OK);
+                    this.Hide();
+                    var form = new FormMenu();
+                    form.Show();
+                } else if (textBoxLogin.Text.ToLower() == "cliente" && textBoxSenha.Text == "123") {
+                    MessageBox.Show("Acesso OK", "Seja bem vindo!\n", MessageBoxButtons.OK);
+                    this.Hide();
+                    var form = new Form1();
+                    form.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Usuário ou senha inválidos", "ATENÇÃO\n", MessageBoxButtons.OK);
+                }
             }
-            else if (textBoxLogin.Text.ToLower() == "admin" && textBoxSenha.Text == "12345")
+            catch (Exception)
             {
-                labelStatus.Text = "Acesso OK";
-                labelStatus.ForeColor = Color.Green;
-                this.Hide();
-                var form = new Form1();
-                form.Show();
             }
-            else
-            {
-                labelStatus.Text = "Usuário ou senha inválidos";
-                labelStatus.ForeColor = Color.Red;
-            }
-
         }
+
 
     } 
 }

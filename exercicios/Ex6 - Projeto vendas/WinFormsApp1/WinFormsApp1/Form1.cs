@@ -12,6 +12,7 @@ namespace WinFormsApp1{
 
             // Inicia o comboBox com valor definido
             comboBoxMarca.SelectedItem = "Selecionar marca";
+            comboBoxProduto.SelectedItem = "Selecionar Produto";
 
             // Desabilita o textBox, radioButton, impossibilitando que o usário edite
             textBoxVista.Enabled= false; 
@@ -77,7 +78,7 @@ namespace WinFormsApp1{
 
 
         private void Form1_Load(object sender, EventArgs e){
-
+            
         }
 
         private void label4_Click(object sender, EventArgs e){
@@ -139,23 +140,31 @@ namespace WinFormsApp1{
         }
 
         private void comboBoxProduto_SelectedIndexChanged(object sender, EventArgs e){
-            switch (comboBoxProduto.Text){
-                case "Milho na mateiga":
-                    valorUni = 12;
-                    break;
-                case "Milho na espiga":
-                    valorUni = 10;
-                    break;
-                case "Produto 1":
-                    valorUni = 100;
-                    break;
-                case "Produto 2":
-                    valorUni = 1000;
-                    break;
-                default:
-                    break;
+            try
+            {
+                switch (comboBoxProduto.Text)
+                {
+                    case "Milho na mateiga":
+                        valorUni = 12;
+                        break;
+                    case "Milho na espiga":
+                        valorUni = 10;
+                        break;
+                    case "Produto 1":
+                        valorUni = 100;
+                        break;
+                    case "Produto 2":
+                        valorUni = 1000;
+                        break;
+                    default:
+                        break;
+                }
+                textBoxValorUni.Text = valorUni.ToString();
             }
-            textBoxValorUni.Text = valorUni.ToString();
+            catch (Exception)
+            {
+            }
+           
 
         }
 
@@ -184,7 +193,6 @@ namespace WinFormsApp1{
                 {
                     radioButtonVista.Enabled = true;
                     radioButton3.Enabled = true;
-                    radioButton6.Enabled = true;
                     buttonCalcular.Enabled = true;
                 }
                 else if (subTotal >=1501 && subTotal <= 5000)
@@ -270,6 +278,43 @@ namespace WinFormsApp1{
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form = new FormMenu();
+            form.Show();
+        }
+
+        private void textBoxSubTotal_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void textBoxTotal_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void textBoxVista_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void textBoxValorUni_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void labelResultado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxQuantidade_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
         private void radioButtonDinheiro_CheckedChanged(object sender, EventArgs e){
             try
             {
@@ -305,18 +350,14 @@ namespace WinFormsApp1{
         private void buttonCalcular_Click(object sender, EventArgs e){
             try
             {
-                if (radioButtonDinheiro.Checked == false)
-                {
-
-                }
                 if (radioButtonDinheiro.Checked)
                 {
                     labelResultado.Text = " Nota fiscal:\n" +
                                       " Produto: " + comboBoxProduto.Text + "\n" +
                                       " Quantidade: " + textBoxQuantidade.Text + "\n" +
                                       " Forma de pagamento: Dinheiro\n" +
-                                      " Desconto de: " + ((subTotal * 5) / 100).ToString("C") + "\n" +
-                                      " Valor total: " + total.ToString("C") + "\n" +
+                                      " Desconto de: " + ((subTotal * 5) / 100).ToString() + "\n" +
+                                      " Valor total: " + total.ToString() + "\n" +
                                       " Data: " + (toolStripStatusLabelData.Text = DateTime.Now.ToShortDateString()) + "\n" +
                                       " Hora: " + toolStripStatusLabelHora.Text;
                 }
@@ -329,7 +370,7 @@ namespace WinFormsApp1{
                                       " Quantidade: " + textBoxQuantidade.Text + "\n" +
                                       " Forma de pagamento: Crédito\n" +
                                       " Número de parcelas: À vista\n" +
-                                      " Valor total: " + subTotal.ToString("C") + "\n" +
+                                      " Valor total: " + subTotal.ToString() + "\n" +
                                       " Data: " + (toolStripStatusLabelData.Text = DateTime.Now.ToShortDateString()) + "\n" +
                                       " Hora: " + toolStripStatusLabelHora.Text;
                     }
@@ -340,7 +381,7 @@ namespace WinFormsApp1{
                                       " Quantidade: " + textBoxQuantidade.Text + "\n" +
                                       " Forma de pagamento: Crédito\n" +
                                       " Número de parcelas: 3x\n" +
-                                      " Valor total: " + (subTotal / 3).ToString("C") + "\n" +
+                                      " Valor total: " + (subTotal / 3).ToString() + "\n" +
                                       " Data: " + (toolStripStatusLabelData.Text = DateTime.Now.ToShortDateString()) + "\n" +
                                       " Hora: " + toolStripStatusLabelHora.Text;
                     }
@@ -351,7 +392,7 @@ namespace WinFormsApp1{
                                       " Quantidade: " + textBoxQuantidade.Text + "\n" +
                                       " Forma de pagamento: Crédito\n" +
                                       " Número de parcelas: 6x\n" +
-                                      " Valor total: " + (subTotal / 6).ToString("C") + "\n" +
+                                      " Valor total: " + (subTotal / 6).ToString() + "\n" +
                                       " Data: " + (toolStripStatusLabelData.Text = DateTime.Now.ToShortDateString()) + "\n" +
                                       " Hora: " + toolStripStatusLabelHora.Text;
                     }
@@ -362,7 +403,7 @@ namespace WinFormsApp1{
                                       " Quantidade: " + textBoxQuantidade.Text + "\n" +
                                       " Forma de pagamento: Crédito\n" +
                                       " Número de parcelas: 10x\n" +
-                                      " Valor total: " + (subTotal / 10).ToString("C") + "\n" +
+                                      " Valor total: " + (subTotal / 10).ToString() + "\n" +
                                       " Data: " + (toolStripStatusLabelData.Text = DateTime.Now.ToShortDateString()) + "\n" +
                                       " Hora: " + toolStripStatusLabelHora.Text;
                     }

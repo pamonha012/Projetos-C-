@@ -36,20 +36,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxQuantidade = new System.Windows.Forms.TextBox();
-            this.textBoxTotal = new System.Windows.Forms.TextBox();
-            this.textBoxValorUni = new System.Windows.Forms.TextBox();
-            this.textBoxSubTotal = new System.Windows.Forms.TextBox();
             this.groupBoxPagamento = new System.Windows.Forms.GroupBox();
             this.radioButtonCredito = new System.Windows.Forms.RadioButton();
             this.radioButtonDinheiro = new System.Windows.Forms.RadioButton();
             this.buttonCalcular = new System.Windows.Forms.Button();
             this.buttonLimpar = new System.Windows.Forms.Button();
             this.groupBoxParcelas = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBoxVista = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.MaskedTextBox();
+            this.textBox6 = new System.Windows.Forms.MaskedTextBox();
+            this.textBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxVista = new System.Windows.Forms.MaskedTextBox();
             this.radioButton10 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -64,6 +60,11 @@
             this.comboBoxMarca = new System.Windows.Forms.ComboBox();
             this.labelResultado = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.buttonVoltar = new System.Windows.Forms.Button();
+            this.textBoxValorUni = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxQuantidade = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxSubTotal = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxTotal = new System.Windows.Forms.MaskedTextBox();
             this.groupBoxPagamento.SuspendLayout();
             this.groupBoxParcelas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -142,37 +143,6 @@
             this.label7.Text = "SUB-TOTAL:";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // textBoxQuantidade
-            // 
-            this.textBoxQuantidade.Location = new System.Drawing.Point(12, 192);
-            this.textBoxQuantidade.Name = "textBoxQuantidade";
-            this.textBoxQuantidade.Size = new System.Drawing.Size(159, 29);
-            this.textBoxQuantidade.TabIndex = 9;
-            this.textBoxQuantidade.TextChanged += new System.EventHandler(this.textBoxQuantidade_TextChanged);
-            // 
-            // textBoxTotal
-            // 
-            this.textBoxTotal.Location = new System.Drawing.Point(457, 192);
-            this.textBoxTotal.Name = "textBoxTotal";
-            this.textBoxTotal.Size = new System.Drawing.Size(159, 29);
-            this.textBoxTotal.TabIndex = 10;
-            this.textBoxTotal.TextChanged += new System.EventHandler(this.textBoxTotal_TextChanged);
-            // 
-            // textBoxValorUni
-            // 
-            this.textBoxValorUni.Location = new System.Drawing.Point(457, 96);
-            this.textBoxValorUni.Name = "textBoxValorUni";
-            this.textBoxValorUni.Size = new System.Drawing.Size(159, 29);
-            this.textBoxValorUni.TabIndex = 11;
-            // 
-            // textBoxSubTotal
-            // 
-            this.textBoxSubTotal.Location = new System.Drawing.Point(242, 192);
-            this.textBoxSubTotal.Name = "textBoxSubTotal";
-            this.textBoxSubTotal.Size = new System.Drawing.Size(159, 29);
-            this.textBoxSubTotal.TabIndex = 12;
-            this.textBoxSubTotal.TextChanged += new System.EventHandler(this.textBoxSubTotal_TextChanged);
-            // 
             // groupBoxPagamento
             // 
             this.groupBoxPagamento.Controls.Add(this.radioButtonCredito);
@@ -180,7 +150,7 @@
             this.groupBoxPagamento.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBoxPagamento.Location = new System.Drawing.Point(12, 245);
             this.groupBoxPagamento.Name = "groupBoxPagamento";
-            this.groupBoxPagamento.Size = new System.Drawing.Size(200, 121);
+            this.groupBoxPagamento.Size = new System.Drawing.Size(159, 121);
             this.groupBoxPagamento.TabIndex = 13;
             this.groupBoxPagamento.TabStop = false;
             this.groupBoxPagamento.Text = "PAGAMENTO";
@@ -189,7 +159,7 @@
             // 
             this.radioButtonCredito.AutoSize = true;
             this.radioButtonCredito.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonCredito.Location = new System.Drawing.Point(22, 71);
+            this.radioButtonCredito.Location = new System.Drawing.Point(11, 71);
             this.radioButtonCredito.Name = "radioButtonCredito";
             this.radioButtonCredito.Size = new System.Drawing.Size(97, 24);
             this.radioButtonCredito.TabIndex = 1;
@@ -202,7 +172,7 @@
             // 
             this.radioButtonDinheiro.AutoSize = true;
             this.radioButtonDinheiro.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonDinheiro.Location = new System.Drawing.Point(22, 40);
+            this.radioButtonDinheiro.Location = new System.Drawing.Point(11, 40);
             this.radioButtonDinheiro.Name = "radioButtonDinheiro";
             this.radioButtonDinheiro.Size = new System.Drawing.Size(147, 24);
             this.radioButtonDinheiro.TabIndex = 0;
@@ -242,46 +212,50 @@
             this.groupBoxParcelas.Controls.Add(this.radioButton3);
             this.groupBoxParcelas.Controls.Add(this.radioButtonVista);
             this.groupBoxParcelas.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBoxParcelas.Location = new System.Drawing.Point(241, 245);
+            this.groupBoxParcelas.Location = new System.Drawing.Point(191, 245);
             this.groupBoxParcelas.Name = "groupBoxParcelas";
-            this.groupBoxParcelas.Size = new System.Drawing.Size(375, 121);
+            this.groupBoxParcelas.Size = new System.Drawing.Size(425, 121);
             this.groupBoxParcelas.TabIndex = 14;
             this.groupBoxParcelas.TabStop = false;
             this.groupBoxParcelas.Text = "PARCELAS";
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(283, 79);
+            this.textBox10.Location = new System.Drawing.Point(292, 81);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(83, 28);
-            this.textBox10.TabIndex = 19;
+            this.textBox10.Size = new System.Drawing.Size(116, 28);
+            this.textBox10.TabIndex = 27;
+            this.textBox10.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(283, 34);
+            this.textBox6.Location = new System.Drawing.Point(292, 34);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(83, 28);
-            this.textBox6.TabIndex = 18;
+            this.textBox6.Size = new System.Drawing.Size(116, 28);
+            this.textBox6.TabIndex = 26;
+            this.textBox6.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(118, 79);
+            this.textBox3.Location = new System.Drawing.Point(107, 81);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(83, 28);
-            this.textBox3.TabIndex = 17;
+            this.textBox3.Size = new System.Drawing.Size(116, 28);
+            this.textBox3.TabIndex = 25;
+            this.textBox3.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // textBoxVista
             // 
-            this.textBoxVista.Location = new System.Drawing.Point(118, 34);
+            this.textBoxVista.Location = new System.Drawing.Point(107, 35);
             this.textBoxVista.Name = "textBoxVista";
-            this.textBoxVista.Size = new System.Drawing.Size(83, 28);
-            this.textBoxVista.TabIndex = 16;
+            this.textBoxVista.Size = new System.Drawing.Size(116, 28);
+            this.textBoxVista.TabIndex = 24;
+            this.textBoxVista.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // radioButton10
             // 
             this.radioButton10.AutoSize = true;
             this.radioButton10.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton10.Location = new System.Drawing.Point(226, 81);
+            this.radioButton10.Location = new System.Drawing.Point(239, 81);
             this.radioButton10.Name = "radioButton10";
             this.radioButton10.Size = new System.Drawing.Size(57, 24);
             this.radioButton10.TabIndex = 3;
@@ -294,7 +268,7 @@
             // 
             this.radioButton6.AutoSize = true;
             this.radioButton6.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton6.Location = new System.Drawing.Point(226, 35);
+            this.radioButton6.Location = new System.Drawing.Point(239, 35);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(47, 24);
             this.radioButton6.TabIndex = 2;
@@ -307,7 +281,7 @@
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton3.Location = new System.Drawing.Point(22, 81);
+            this.radioButton3.Location = new System.Drawing.Point(9, 81);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(47, 24);
             this.radioButton3.TabIndex = 1;
@@ -320,7 +294,7 @@
             // 
             this.radioButtonVista.AutoSize = true;
             this.radioButtonVista.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonVista.Location = new System.Drawing.Point(22, 35);
+            this.radioButtonVista.Location = new System.Drawing.Point(9, 35);
             this.radioButtonVista.Name = "radioButtonVista";
             this.radioButtonVista.Size = new System.Drawing.Size(97, 24);
             this.radioButtonVista.TabIndex = 0;
@@ -405,6 +379,7 @@
             this.labelResultado.Size = new System.Drawing.Size(424, 185);
             this.labelResultado.TabIndex = 20;
             this.labelResultado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelResultado.Click += new System.EventHandler(this.labelResultado_Click);
             // 
             // timer1
             // 
@@ -412,12 +387,61 @@
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // buttonVoltar
+            // 
+            this.buttonVoltar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonVoltar.Location = new System.Drawing.Point(12, 12);
+            this.buttonVoltar.Name = "buttonVoltar";
+            this.buttonVoltar.Size = new System.Drawing.Size(64, 41);
+            this.buttonVoltar.TabIndex = 49;
+            this.buttonVoltar.Text = "Voltar";
+            this.buttonVoltar.UseVisualStyleBackColor = true;
+            this.buttonVoltar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBoxValorUni
+            // 
+            this.textBoxValorUni.Location = new System.Drawing.Point(457, 95);
+            this.textBoxValorUni.Name = "textBoxValorUni";
+            this.textBoxValorUni.Size = new System.Drawing.Size(158, 29);
+            this.textBoxValorUni.TabIndex = 52;
+            this.textBoxValorUni.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // textBoxQuantidade
+            // 
+            this.textBoxQuantidade.Location = new System.Drawing.Point(12, 191);
+            this.textBoxQuantidade.Name = "textBoxQuantidade";
+            this.textBoxQuantidade.Size = new System.Drawing.Size(158, 29);
+            this.textBoxQuantidade.TabIndex = 53;
+            this.textBoxQuantidade.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.textBoxQuantidade.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.textBoxQuantidade_MaskInputRejected);
+            // 
+            // textBoxSubTotal
+            // 
+            this.textBoxSubTotal.Location = new System.Drawing.Point(241, 191);
+            this.textBoxSubTotal.Name = "textBoxSubTotal";
+            this.textBoxSubTotal.Size = new System.Drawing.Size(159, 29);
+            this.textBoxSubTotal.TabIndex = 54;
+            this.textBoxSubTotal.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // textBoxTotal
+            // 
+            this.textBoxTotal.Location = new System.Drawing.Point(457, 191);
+            this.textBoxTotal.Name = "textBoxTotal";
+            this.textBoxTotal.Size = new System.Drawing.Size(158, 29);
+            this.textBoxTotal.TabIndex = 55;
+            this.textBoxTotal.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(627, 618);
+            this.Controls.Add(this.textBoxTotal);
+            this.Controls.Add(this.textBoxSubTotal);
+            this.Controls.Add(this.textBoxQuantidade);
+            this.Controls.Add(this.textBoxValorUni);
+            this.Controls.Add(this.buttonVoltar);
             this.Controls.Add(this.labelResultado);
             this.Controls.Add(this.comboBoxMarca);
             this.Controls.Add(this.statusStrip1);
@@ -427,10 +451,6 @@
             this.Controls.Add(this.buttonLimpar);
             this.Controls.Add(this.buttonCalcular);
             this.Controls.Add(this.groupBoxPagamento);
-            this.Controls.Add(this.textBoxSubTotal);
-            this.Controls.Add(this.textBoxValorUni);
-            this.Controls.Add(this.textBoxTotal);
-            this.Controls.Add(this.textBoxQuantidade);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -468,20 +488,12 @@
         private Label label5;
         private Label label6;
         private Label label7;
-        private TextBox textBoxQuantidade;
-        private TextBox textBoxTotal;
-        private TextBox textBoxValorUni;
-        private TextBox textBoxSubTotal;
         private GroupBox groupBoxPagamento;
         private RadioButton radioButtonCredito;
         private RadioButton radioButtonDinheiro;
         private Button buttonCalcular;
         private Button buttonLimpar;
         private GroupBox groupBoxParcelas;
-        private TextBox textBox10;
-        private TextBox textBox6;
-        private TextBox textBox3;
-        private TextBox textBoxVista;
         private RadioButton radioButton10;
         private RadioButton radioButton6;
         private RadioButton radioButton3;
@@ -496,5 +508,14 @@
         private ToolStripStatusLabel toolStripStatusLabel2;
         private ToolStripStatusLabel toolStripStatusLabelHora;
         private System.Windows.Forms.Timer timer1;
+        private Button buttonVoltar;
+        private MaskedTextBox textBox10;
+        private MaskedTextBox textBox6;
+        private MaskedTextBox textBox3;
+        private MaskedTextBox textBoxVista;
+        private MaskedTextBox textBoxValorUni;
+        private MaskedTextBox textBoxQuantidade;
+        private MaskedTextBox textBoxSubTotal;
+        private MaskedTextBox textBoxTotal;
     }
 }

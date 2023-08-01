@@ -17,3 +17,16 @@ C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicio
 C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Ex6 - Projeto vendas\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\ref\WinFormsApp1.dll
 C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Ex6 - Projeto vendas\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.FormLogin.resources
 C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Ex6 - Projeto vendas\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Properties.Resources.resources
+C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Ex6 - Projeto vendas\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.FormMenu.resources
+C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Ex6 - Projeto vendas\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.FormCliente.resources
+C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Ex6 - Projeto vendas\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.FormFornecedores.resources
+C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Ex6 - Projeto vendas\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.FormProduto.resources
+C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Ex6 - Projeto vendas\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.FormMarcas.resources
+C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Ex6 - Projeto vendas\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.FormTeste.resources
+C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Ex6 - Projeto vendas\WinFormsApp1\WinFormsApp1\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Ex6 - Projeto vendas\WinFormsApp1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Ex6 - Projeto vendas\WinFormsApp1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Ex6 - Projeto vendas\WinFormsApp1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Ex6 - Projeto vendas\WinFormsApp1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Ex6 - Projeto vendas\WinFormsApp1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\guilherme.hcarvalho3\Documents\Visual Studio 2022\Projetos c#\exercicios\Ex6 - Projeto vendas\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.csproj.CopyComplete

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelStatus = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.textBoxSenha = new System.Windows.Forms.TextBox();
@@ -59,26 +58,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bauhaus 93", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(125, 275);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Senha:";
             // 
-            // labelStatus
-            // 
-            this.labelStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelStatus.Location = new System.Drawing.Point(76, 390);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(164, 21);
-            this.labelStatus.TabIndex = 2;
-            this.labelStatus.Text = ".";
-            this.labelStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bauhaus 93", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(129, 190);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 24);
@@ -104,28 +95,31 @@
             // 
             // buttonLogar
             // 
+            this.buttonLogar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonLogar.Location = new System.Drawing.Point(54, 347);
             this.buttonLogar.Name = "buttonLogar";
             this.buttonLogar.Size = new System.Drawing.Size(87, 31);
             this.buttonLogar.TabIndex = 6;
             this.buttonLogar.Text = "Entrar";
-            this.buttonLogar.UseVisualStyleBackColor = true;
+            this.buttonLogar.UseVisualStyleBackColor = false;
             this.buttonLogar.Click += new System.EventHandler(this.buttonLogar_Click);
             // 
             // buttonLimpar
             // 
+            this.buttonLimpar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonLimpar.Location = new System.Drawing.Point(173, 347);
             this.buttonLimpar.Name = "buttonLimpar";
             this.buttonLimpar.Size = new System.Drawing.Size(87, 31);
             this.buttonLimpar.TabIndex = 7;
             this.buttonLimpar.Text = "Limpar";
-            this.buttonLimpar.UseVisualStyleBackColor = true;
+            this.buttonLimpar.UseVisualStyleBackColor = false;
             this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(11, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 13);
@@ -134,13 +128,15 @@
             // 
             // buttonCadastrar
             // 
+            this.buttonCadastrar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonCadastrar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonCadastrar.ForeColor = System.Drawing.Color.Black;
             this.buttonCadastrar.Location = new System.Drawing.Point(108, 38);
             this.buttonCadastrar.Name = "buttonCadastrar";
             this.buttonCadastrar.Size = new System.Drawing.Size(75, 23);
             this.buttonCadastrar.TabIndex = 9;
             this.buttonCadastrar.Text = "Cadastra-se";
-            this.buttonCadastrar.UseVisualStyleBackColor = true;
+            this.buttonCadastrar.UseVisualStyleBackColor = false;
             this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
             // 
             // groupBox1
@@ -148,6 +144,7 @@
             this.groupBox1.Controls.Add(this.buttonCadastrar);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 441);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 69);
@@ -157,16 +154,17 @@
             // 
             // FormLogin
             // 
+            this.AcceptButton = this.buttonLogar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(316, 514);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(316, 525);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonLimpar);
             this.Controls.Add(this.buttonLogar);
             this.Controls.Add(this.textBoxSenha);
             this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -176,7 +174,7 @@
             this.MinimizeBox = false;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormLogin";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.FormLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -190,7 +188,6 @@
 
         private PictureBox pictureBox1;
         private Label label1;
-        private Label labelStatus;
         private Label label3;
         private TextBox textBoxLogin;
         private TextBox textBoxSenha;
